@@ -39,7 +39,7 @@ app.use(mongoSanitize());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobRouter);
 
-app.get("*", (req, res) => {
+app.get("*", (res, req) => {
   res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
