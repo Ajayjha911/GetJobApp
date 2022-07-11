@@ -40,7 +40,7 @@ app.use("/api/v1/jobs", authenticateUser, jobRouter);
 
 // only when ready to deploy
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
 });
 
 app.use(notFoundMiddleware);
